@@ -1,9 +1,7 @@
 package com.poc.spark.app
 
 import com.poc.spark.config.SparkSessionConfig
-import org.apache.spark.sql.{Column, Row, SaveMode}
-import org.apache.spark.sql.catalyst.encoders.RowEncoder
-import org.apache.spark.sql.types.{DataType, IntegerType, StringType, StructField, StructType}
+import org.apache.spark.sql.types.{StringType}
 import org.apache.spark.sql.functions._
 
 object AddMultipleColumnsToADataframe extends App with Serializable{
@@ -20,4 +18,6 @@ object AddMultipleColumnsToADataframe extends App with Serializable{
 
   df2.show(false)
   df2.printSchema()
+
+
 }

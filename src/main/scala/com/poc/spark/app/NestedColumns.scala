@@ -2,7 +2,7 @@ package com.poc.spark.app
 
 import com.poc.spark.config.SparkSessionConfig
 import org.apache.spark.sql.{Row, SparkSession}
-import org.apache.spark.sql.types.{StringType, StructField, StructType}
+import org.apache.spark.sql.types.{StringType, StructType}
 
 object NestedColumns extends App with Serializable {
 
@@ -29,10 +29,10 @@ class NestedColumns extends Serializable {
         .add("FirstName", StringType)
         .add("LastName", StringType))
 
-
     import sparkSession.implicits._
     val df = sparkSession.createDataFrame(sparkSession.sparkContext.parallelize(inputdata), schema)
     df.printSchema()
     df.show(false)
   }
+
 }
